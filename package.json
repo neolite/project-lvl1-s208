@@ -1,0 +1,23 @@
+{
+  "name": "simple-brain-games",
+  "version": "0.0.1",
+  "description": "A simple braing games project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neolite/project-lvl1-s208.git"
+  },
+  "keywords": [
+    "brain",
+    "games"
+  ],
+  "author": "Rafkat G.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/neolite/project-lvl1-s208/issues"
+  },
+  "homepage": "https://github.com/neolite/project-lvl1-s208#readme"
+}
