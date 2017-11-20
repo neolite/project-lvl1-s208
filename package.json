@@ -2,20 +2,17 @@
   "name": "simple-brain-games",
   "version": "0.0.2",
   "description": "A simple braing games project",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "babel-node": "babel-node",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1"
-  },
-  "scripts": {
-    "babel-node": "babel-node",
-    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublishOnly": "npm run build"
   },
   "preferGlobal": true,
   "bin": {
@@ -34,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/neolite/project-lvl1-s208/issues"
   },
-  "homepage": "https://github.com/neolite/project-lvl1-s208#readme"
+  "homepage": "https://github.com/neolite/project-lvl1-s208#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.7"
+  }
 }
