@@ -1,6 +1,6 @@
 {
   "name": "simple-brain-games",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A simple braing games project",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
+  "preferGlobal": true,
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
