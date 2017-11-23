@@ -1,7 +1,5 @@
-#!/usr/bin/env node
-
-import echoName from '..';
 import welcomeMessage from '../welcome';
+import evenGame from '../games/even';
 
 welcomeMessage();
-echoName();
+evenGame();
