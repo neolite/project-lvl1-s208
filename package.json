@@ -1,11 +1,11 @@
 {
   "name": "simple-brain-games",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "description": "A simple braing games project",
   "main": "src/index.js",
   "scripts": {
     "babel-node": "babel-node",
-    "build": "NODE_ENV=production babel src/bin --out-dir dist --source-maps inline",
+    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
     "eslint": "eslint src"
   },
@@ -21,8 +21,8 @@
   },
   "preferGlobal": true,
   "bin": {
-    "brain-games": "dist/brain-games.js",
-    "brain-even": "dist/brain-even.js"
+    "brain-games": "dist/bin/brain-games.js",
+    "brain-even": "dist/bin/brain-even.js"
   },
   "files": [
     "dist"

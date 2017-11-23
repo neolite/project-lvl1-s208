@@ -1,7 +1,5 @@
 #!/usr/bin/env node
-
-import echoName from '..';
-import welcomeMessage from '../welcome';
+import { welcomeMessage, echoName } from '..';
 
 welcomeMessage();
 echoName();
