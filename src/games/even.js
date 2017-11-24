@@ -1,8 +1,5 @@
-import readlineSync from 'readline-sync';
+import { welcomeMessage, getName, getRandom, getAnswer } from '..';
 
-const getRandom = (min = 1, max = 100) => Math.floor(Math.random() * ((max - min) + 1)) + min;
-const getAnswer = () => readlineSync.question('Your answer?: ');
-const getName = () => readlineSync.question('May I have your name?: ');
 const isEven = n => (n % 2) === 0;
 const getStringAnswer = n => (n ? 'yes' : 'no');
 const answerCorrect = (n, answer) => {
@@ -17,6 +14,7 @@ const answerCorrect = (n, answer) => {
 };
 
 export default () => {
+  welcomeMessage();
   const name = getName();
   console.log('Answer "yes" if number even otherwise answer "no".');
   for (let i = 0; i < 3; i += 1) {
