@@ -1,4 +1,4 @@
-import { welcomeMessage, getName, getRandom, getAnswer } from '..';
+import { getRandom, getAnswer, gameFactory } from '..';
 
 const plus = a => b => a + b;
 const minus = a => b => a - b;
@@ -17,27 +17,22 @@ const calcExpression = (op, a, b) => {
   }
 };
 
-export default () => {
-  welcomeMessage();
-  console.log('What is the result of the expression?');
-  const name = getName();
-  console.log(`Hello, ${name}`);
+const calcGame = () => {
   const ops = ['+', '-', '*'];
-  for (let i = 0; i < 3; i += 1) {
-    const op = ops[getRandom(0, 2)];
-    const firstNumber = getRandom(1, 10);
-    const secondNumber = getRandom(1, 10);
-    const expString = `${firstNumber} ${op} ${secondNumber}`;
-    console.log(`Question: ${expString}`);
-    const answer = parseInt(getAnswer(), 10);
-    const result = calcExpression(op, firstNumber, secondNumber);
-    if (answer === result) {
-      console.log('Correct');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${name}!`);
-      return;
-    }
-  }
-  console.log(`Congratulations, ${name}!`);
+  const op = ops[getRandom(0, 2)];
+  const secondNumber = getRandom(1, 10);
+  const firstNumber = getRandom(1, 10);
+  const expString = `${firstNumber} ${op} ${secondNumber}`;
+  console.log(`Question: ${expString}`);
+  return {
+    answer: parseInt(getAnswer(), 10),
+    result: calcExpression(op, firstNumber, secondNumber),
+  };
 };
 
+
+const gameWrapper = () => {
+  gameFactory(calcGame, 'What is the result of the expression?');
+};
+
+export default gameWrapper;

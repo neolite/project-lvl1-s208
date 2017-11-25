@@ -1,6 +1,6 @@
 {
   "name": "simple-brain-games",
-  "version": "0.3.0",
+  "version": "0.3.5",
   "description": "A simple braing games project",
   "main": "src/index.js",
   "scripts": {

@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { welcomeMessage, echoName } from '..';
+import { gameFactory } from '..';
 
-welcomeMessage();
-echoName();
+gameFactory();
