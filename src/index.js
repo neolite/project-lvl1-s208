@@ -7,14 +7,14 @@ export function getRandom(min = 1, max = 100) {
 }
 export const getAnswer = () => readlineSync.question('Your answer?: ');
 
-export const gameFactory = (gameModule, initialMessage = '') => {
+export const gameFactory = (gameContainer, initialMessage = '') => {
   welcomeMessage();
   console.log(initialMessage);
   const name = getName();
   console.log(`Hello, ${name}`);
-  if (typeof gameModule === 'undefined') return;
+  if (typeof gameContainer === 'undefined') return;
   for (let i = 0; i < 3; i += 1) {
-    const { answer, result } = gameModule();
+    const { answer, result } = gameContainer();
     if (answer === result) {
       console.log('Correct');
     } else {
