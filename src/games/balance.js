@@ -10,7 +10,7 @@ const getBalanced = (n) => {
     digits = digits.sort((a, b) => a - b);
     return getBalanced(digits);
   }
-  return n.reduce((el, acc) => el.toString() + acc);
+  return Array.isArray(n) ? n.reduce((el, acc) => el.toString() + acc) : n;
 };
 
 const balanceGame = () => {
