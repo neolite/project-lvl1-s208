@@ -14,11 +14,13 @@ export const gameFactory = (gameContainer, initialMessage = '') => {
   console.log(`Hello, ${name}`);
   if (typeof gameContainer === 'undefined') return;
   for (let i = 0; i < 3; i += 1) {
-    const { answer, result } = gameContainer();
-    if (answer === result) {
+    const { question, answer } = gameContainer();
+    console.log(`Question: ${question}`);
+    const userAnswer = getAnswer();
+    if (userAnswer === answer) {
       console.log('Correct');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${name}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}'.\nLet's try again, ${name}!`);
       return;
     }
   }

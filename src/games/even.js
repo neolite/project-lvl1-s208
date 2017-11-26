@@ -1,13 +1,13 @@
-import { getRandom, getAnswer, gameFactory } from '..';
+import { getRandom, gameFactory } from '..';
 
 const isEven = n => ((n % 2) === 0 ? 'yes' : 'no');
 
 const evenGame = () => {
   const randomNumber = getRandom();
-  console.log(`Question: ${randomNumber}`);
+  const answer = isEven(randomNumber);
   return {
-    answer: getAnswer(),
-    result: isEven(randomNumber),
+    question: `${randomNumber}`,
+    answer: String(answer),
   };
 };
 

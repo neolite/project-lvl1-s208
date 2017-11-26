@@ -1,4 +1,4 @@
-import { getRandom, getAnswer, gameFactory } from '..';
+import { getRandom, gameFactory } from '..';
 
 const plus = a => b => a + b;
 const minus = a => b => a - b;
@@ -22,14 +22,12 @@ const calcGame = () => {
   const op = ops[getRandom(0, 2)];
   const secondNumber = getRandom(1, 10);
   const firstNumber = getRandom(1, 10);
-  const expString = `${firstNumber} ${op} ${secondNumber}`;
-  console.log(`Question: ${expString}`);
+  const answer = calcExpression(op, firstNumber, secondNumber);
   return {
-    answer: parseInt(getAnswer(), 10),
-    result: calcExpression(op, firstNumber, secondNumber),
+    question: `${firstNumber} ${op} ${secondNumber}`,
+    answer: String(answer),
   };
 };
-
 
 const gameWrapper = () => {
   gameFactory(calcGame, 'What is the result of the expression?');

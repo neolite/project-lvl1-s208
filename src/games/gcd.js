@@ -1,4 +1,4 @@
-import { getRandom, getAnswer, gameFactory } from '..';
+import { getRandom, gameFactory } from '..';
 
 const calcGCD = (n, m) => {
   if (m > 0) {
@@ -11,10 +11,10 @@ const calcGCD = (n, m) => {
 const gcdGame = () => {
   const firstNumber = getRandom();
   const secondNumber = getRandom();
-  console.log(`Question: ${firstNumber} ${secondNumber}`);
+  const answer = calcGCD(firstNumber, secondNumber);
   return {
-    answer: parseInt(getAnswer(), 10),
-    result: calcGCD(firstNumber, secondNumber),
+    question: `${firstNumber} ${secondNumber}`,
+    answer: String(answer),
   };
 };
 
