@@ -1,4 +1,4 @@
-import { getRandom, gameMaker} from '..';
+import { getRandom, makeGame } from '..';
 
 const isPrime = (num) => {
   const primeRange = Object.keys(Array.apply(0, Array(num - 2))).map(Number).map(i => i + 2);
@@ -16,7 +16,7 @@ const primeGame = () => {
 };
 
 const gameWrapper = () => {
-  gameMaker(primeGame, 'Is this number prime?');
+  makeGame(primeGame, 'Is this number prime?');
 };
 
 export default gameWrapper;

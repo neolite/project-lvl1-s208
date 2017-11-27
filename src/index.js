@@ -7,7 +7,7 @@ export function getRandom(min = 1, max = 100) {
 }
 export const getAnswer = () => readlineSync.question('Your answer?: ');
 
-export const gameMaker = (gameContainer, initialMessage = '') => {
+export const makeGame = (gameContainer, initialMessage = '') => {
   welcomeMessage();
   console.log(initialMessage);
   const name = getName();

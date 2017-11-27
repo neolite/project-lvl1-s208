@@ -1,4 +1,4 @@
-import { getRandom, gameMaker } from '..';
+import { getRandom, makeGame } from '..';
 
 const getProgression = () => {
   const step = getRandom(1, 10);
@@ -27,7 +27,7 @@ const progressionGame = () => {
 };
 
 const gameWrapper = () => {
-  gameMaker(progressionGame, 'What number is missing in this progression?');
+  makeGame(progressionGame, 'What number is missing in this progression?');
 };
 
 export default gameWrapper;

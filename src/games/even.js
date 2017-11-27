@@ -1,4 +1,4 @@
-import { getRandom, gameFactory } from '..';
+import { getRandom, makeGame } from '..';
 
 const isEven = n => ((n % 2) === 0 ? 'yes' : 'no');
 
@@ -12,7 +12,7 @@ const evenGame = () => {
 };
 
 const gameWrapper = () => {
-  gameFactory(evenGame, 'Answer "yes" if number even otherwise answer "no".');
+  makeGame(evenGame, 'Answer "yes" if number even otherwise answer "no".');
 };
 
 export default gameWrapper;

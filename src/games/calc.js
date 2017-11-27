@@ -1,4 +1,4 @@
-import { getRandom, gameMaker } from '..';
+import { getRandom, makeGame } from '..';
 
 const plus = a => b => a + b;
 const minus = a => b => a - b;
@@ -30,7 +30,7 @@ const calcGame = () => {
 };
 
 const gameWrapper = () => {
-  gameMaker(calcGame, 'What is the result of the expression?');
+  makeGame(calcGame, 'What is the result of the expression?');
 };
 
 export default gameWrapper;
