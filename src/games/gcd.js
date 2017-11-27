@@ -1,4 +1,4 @@
-import { getRandom, gameFactory } from '..';
+import { getRandom, gameMaker } from '..';
 
 const calcGCD = (n, m) => {
   if (m > 0) {
@@ -19,7 +19,7 @@ const gcdGame = () => {
 };
 
 const gameWrapper = () => {
-  gameFactory(gcdGame, 'Find the greatest common divisor of given numbers.');
+  gameMaker(gcdGame, 'Find the greatest common divisor of given numbers.');
 };
 
 export default gameWrapper;

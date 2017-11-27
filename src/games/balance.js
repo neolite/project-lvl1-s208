@@ -1,4 +1,4 @@
-import { getRandom, gameFactory } from '..';
+import { getRandom, gameMaker } from '..';
 
 const getBalanced = (n) => {
   let digits = Array.isArray(n) ? n : Array.from(n.toString()).map(Number);
@@ -23,7 +23,7 @@ const balanceGame = () => {
 };
 
 const gameWrapper = () => {
-  gameFactory(balanceGame, 'Balance the given number.');
+  gameMaker(balanceGame, 'Balance the given number.');
 };
 
 export default gameWrapper;

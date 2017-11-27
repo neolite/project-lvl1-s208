@@ -1,21 +1,22 @@
-import { getRandom, gameFactory } from '..';
+import { getRandom, gameMaker} from '..';
 
 const isPrime = (num) => {
-  for (let i = 2; i < num; i += 1) { if (num % i === 0) return 'no'; }
-  return num !== 1 ? 'yes' : 'no';
+  const primeRange = Object.keys(Array.apply(0, Array(num - 2))).map(Number).map(i => i + 2);
+  return primeRange.filter(n => num % n === 0).length === 0;
 };
+
 
 const primeGame = () => {
   const randomNumber = getRandom();
-  const answer = isPrime(randomNumber);
+  const answer = isPrime(randomNumber) ? 'yes' : 'no';
   return {
     question: `${randomNumber}`,
-    answer: String(answer),
+    answer,
   };
 };
 
 const gameWrapper = () => {
-  gameFactory(primeGame, 'Is this number prime?');
+  gameMaker(primeGame, 'Is this number prime?');
 };
 
 export default gameWrapper;
